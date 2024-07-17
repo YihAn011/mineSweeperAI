@@ -28,7 +28,7 @@
 #include <algorithm>
 #include <ctime>
 #include <queue>
-#include "World.hpp"
+//#include "World.hpp"
 
 using namespace std;
 
@@ -39,20 +39,37 @@ public:
 
     Action getAction ( int number ) override;
 
-    bool isInBounds ( int c, int r );
+    
 
-    void revealAdjacentZeros(int x, int y);
 
+    
     // ======================================================================
     // YOUR CODE BEGINS
     // ======================================================================
+    ~MyAI();
+    bool isInBounds ( int c, int r );
+    struct Tile
+    {
+        bool mine       = false; // the tile has Bomb or not
+        bool uncovered  = false; // the tile uncovered or not
+        bool flag       = false; // the tile has been flag or not
+        int  number     = 0;     // records number of bombs around
+    };
 
+    Tile** board;
 private:
     int rowDimension;
     int colDimension;
     int agentX;
     int agentY;
-    //std::vector<std::vector<bool>> uncovered;
+    int lastX;
+    int lastY;
+    
+    std::queue<Action> actions;
+    
+    void uncoverAdjacentTiles(int x, int y);
+    void processNumberOne(int x, int y);
+    
 
     // ======================================================================
     // YOUR CODE ENDS
