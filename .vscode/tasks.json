@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/Minesweeper_Cpp"
+            },
+            "problemMatcher": [],
+            "detail": "Build project using Makefile"
+        }
+    ]
+}

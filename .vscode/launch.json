@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Minesweeper",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Minesweeper_Cpp/bin/Minesweeper",
+            "args": ["-f", "../WorldGenerator/Problems/Easy_world_2.txt"],//"-f", "../WorldGenerator/Problems/Easy_world_1.txt"可以加上地图
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/Minesweeper_Cpp",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "build",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "text": "-enable-pretty-printing",
+                    "description": "Enable pretty printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "logging": {
+                "moduleLoad": false,
+                "trace": false,
+                "engineLogging": false,
+                "programOutput": true,
+                "exceptions": true
+            }
+        }
+    ]
+}

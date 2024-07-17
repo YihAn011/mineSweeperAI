@@ -26,6 +26,9 @@
 #include <map>
 #include <set>
 #include <algorithm>
+#include <ctime>
+#include <queue>
+#include "World.hpp"
 
 using namespace std;
 
@@ -36,12 +39,20 @@ public:
 
     Action getAction ( int number ) override;
 
+    bool isInBounds ( int c, int r );
+
+    void revealAdjacentZeros(int x, int y);
 
     // ======================================================================
     // YOUR CODE BEGINS
     // ======================================================================
 
-
+private:
+    int rowDimension;
+    int colDimension;
+    int agentX;
+    int agentY;
+    //std::vector<std::vector<bool>> uncovered;
 
     // ======================================================================
     // YOUR CODE ENDS
